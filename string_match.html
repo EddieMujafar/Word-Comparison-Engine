@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<style>
+@keyframes backgroundAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+body {
+  background-color: black;
+  color: white;
+  background-image: url('Brainstorming.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  animation: backgroundAnimation 10s infinite alternate;
+}
+
+input {
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid white;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  transition: all 0.3s ease-in-out;
+}
+
+input:focus {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: #00ff00;
+  outline: none;
+  transform: scale(1.1);
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: #0056b3;
+  transform: scale(1.1);
+}
+
+div {
+  margin-top: 20px;
+  font-size: 18px;
+  text-align: center;
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+</style>
+<body>
+<p>
+  <input id="first" required placeholder="Enter the first string">
+</p>
+<p>
+  <input id="second" required placeholder="Enter the second string">
+</p>
+<button onclick="compare()">COMPARE</button>
+<div id="matching">Match Percentage is</div>
+<div id="match"></div>
+<div id="matcher"></div>
+<div id="matchers"></div>
+</body>
+<script src="similaritys.js"></script>
+<script src="string_match.js"></script>
+</html>
